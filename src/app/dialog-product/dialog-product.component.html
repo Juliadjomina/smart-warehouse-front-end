@@ -1,0 +1,53 @@
+<h1 mat-dialog-title>Add Product Form</h1>
+<div mat-dialog-content>
+  <form [formGroup]="productForm">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Product name</mat-label>
+      <input formControlName="name" matInput placeholder="Placeholder">
+      <mat-hint>Sokid</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Serial number</mat-label>
+      <input formControlName="serialnumber" matInput placeholder="Placeholder">
+      <mat-hint>AD-234</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <input formControlName="dateofpurchase"  matInput [matDatepicker]="picker">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Length</mat-label>
+      <input formControlName="length" matInput placeholder="Placeholder">
+      <mat-hint>5</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Width</mat-label>
+      <input formControlName="width" matInput placeholder="Placeholder">
+      <mat-hint>4</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Depth</mat-label>
+      <input formControlName="depth" matInput placeholder="Placeholder">
+      <mat-hint>5</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Material</mat-label>
+      <input formControlName="material" matInput placeholder="Placeholder">
+      <mat-hint>Nahk</mat-hint>
+    </mat-form-field>
+
+  </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button mat-dialog-close="">Close</button>
+  <button mat-raised-button  (click)="addProduct()">{{actionBtn}}</button>
+</div>

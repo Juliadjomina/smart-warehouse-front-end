@@ -1,0 +1,27 @@
+<app-menu></app-menu>
+<div class="container col-lg-6">
+  <h1 class="text-center">Login</h1>
+  <div class="card">
+    <div class="card-body">
+      <form name="form-group" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+        <div class="username" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+          <label >Username</label>
+          <div class="usernamebody">
+          <input  class="form-control" type="text" name="username" [(ngModel)]="model.username" #username="ngModel" required />
+          <div *ngIf="f.submitted && !username.valid">Username is required</div>
+          </div>
+        </div>
+        <div class="password" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+          <label>Password</label>
+        <div class="passwordbody">
+          <input class="form-control" type="password" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+          <div *ngIf="f.submitted && !password.valid">Password is required</div>
+        </div>
+        </div>
+        <div>
+          <button  class="btn btn-success" >Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
