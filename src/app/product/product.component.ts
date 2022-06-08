@@ -22,7 +22,7 @@ import {DialogProductComponent} from "../dialog-product/dialog-product.component
 })
 export class ProductComponent implements OnInit {
 
-  displayedColumns: string[] = ['name', 'serialnumber', 'dateofpurchase', 'length', 'width', 'depth', 'material', 'action'];
+  displayedColumns: string[] = ['name', 'serialNumber', 'dateOfPurchase', 'length', 'width', 'depth', 'material', 'action'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;

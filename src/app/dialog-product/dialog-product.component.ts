@@ -3,10 +3,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {StorageService} from "../service/storage.service";
 import {ProductComponent} from "../product/product.component";
-import {ActivatedRoute, Router} from "@angular/router";
 import {ProductService} from "../service/product.service";
-import {Product} from "../../models/product";
-import {Storage} from "../../models/storage";
 
 @Component({
   selector: 'app-dialog-product',
@@ -34,6 +31,8 @@ export class DialogProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = Number(this.currentLocation.pathname.charAt(9))
+    console.log("JEY")
+    console.log(this.id)
 
     this.apiStorage.getStorageById(this.id).subscribe({
       next: (res) => {
@@ -51,8 +50,8 @@ export class DialogProductComponent implements OnInit {
     this.productForm = this.formBuilder.group({
       id: [''],
       name: ['', Validators.required],
-      serialnumber: [''],
-      dateofpurchase: [''],
+      serialNumber: [''],
+      dateOfPurchase: [''],
       length: [''],
       width: [''],
       depth: [''],
@@ -66,8 +65,8 @@ export class DialogProductComponent implements OnInit {
       this.actionBtn = 'Update';
       this.productForm.controls['id'].setValue(this.editData.id);
       this.productForm.controls['name'].setValue(this.editData.name);
-      this.productForm.controls['serialnumber'].setValue(this.editData.serialnumber);
-      this.productForm.controls['dateofpurchase'].setValue(this.editData.dateofpurchase);
+      this.productForm.controls['serialNumber'].setValue(this.editData.serialNumber);
+      this.productForm.controls['dateOfPurchase'].setValue(this.editData.dateOfPurchase);
       this.productForm.controls['length'].setValue(this.editData.length);
       this.productForm.controls['width'].setValue(this.editData.width);
       this.productForm.controls['depth'].setValue(this.editData.depth);
@@ -110,6 +109,8 @@ export class DialogProductComponent implements OnInit {
   }
 
   updateProduct() {
+    console.log("HEREEE")
+    console.log(this.productForm.value)
     this.api.updateProduct(this.productForm.value).subscribe({
       next: (res) => {
         alert("Product updated successfully!");

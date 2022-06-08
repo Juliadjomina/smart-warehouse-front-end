@@ -14,7 +14,7 @@ import {Product} from "../../models/product";
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  displayedColumns: string[] = ['name', 'serialnumber', 'dateofpurchase', 'length', 'width', 'depth', 'material'];
+  displayedColumns: string[] = ['name', 'serialNumber', 'dateOfPurchase', 'length', 'width', 'depth', 'material'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
