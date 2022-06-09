@@ -31,8 +31,6 @@ export class DialogProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = Number(this.currentLocation.pathname.charAt(9))
-    console.log("JEY")
-    console.log(this.id)
 
     this.apiStorage.getStorageById(this.id).subscribe({
       next: (res) => {
@@ -60,8 +58,6 @@ export class DialogProductComponent implements OnInit {
     })
 
     if (this.editData) {
-      console.log("here");
-      console.log(this.editData);
       this.actionBtn = 'Update';
       this.productForm.controls['id'].setValue(this.editData.id);
       this.productForm.controls['name'].setValue(this.editData.name);
@@ -77,13 +73,8 @@ export class DialogProductComponent implements OnInit {
 
 
   addProduct(): void {
-    console.log(this.storage);
     if (!this.editData) {
       if (this.productForm.valid) {
-        console.log("Here")
-
-
-        console.log(this.products);
         // @ts-ignore
         if (this.products.length < this.storage['capacity']){
           this.api.createProduct(this.productForm.value).subscribe({
@@ -109,8 +100,6 @@ export class DialogProductComponent implements OnInit {
   }
 
   updateProduct() {
-    console.log("HEREEE")
-    console.log(this.productForm.value)
     this.api.updateProduct(this.productForm.value).subscribe({
       next: (res) => {
         alert("Product updated successfully!");

@@ -1,12 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 
 import {ActivatedRoute, Router} from '@angular/router';
-
-import {Product} from "../../models/product";
-import {Storage} from "../../models/storage";
-
+import {Product} from "../../models/product"
 import {MatPaginator} from '@angular/material/paginator';
-
 import {MatDialog} from "@angular/material/dialog";
 import {MatTableDataSource} from "@angular/material/table";
 import {StorageService} from "../service/storage.service";
