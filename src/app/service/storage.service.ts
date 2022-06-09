@@ -11,11 +11,11 @@ export class StorageService {
   }
 
   createStorage(data: any) {
-    return this.http.post<any>("http://localhost:8080/storages", data)
+    return this.http.post<any>("http://localhost:8080/storages/", data)
   }
 
   updateStorage(storage: Storage) {
-    return this.http.put("http://localhost:8080/storages", storage)
+    return this.http.put("http://localhost:8080/storages/", storage)
   }
 
   getStorageList() {
@@ -27,7 +27,7 @@ export class StorageService {
   }
 
   deleteStorage(id: number) {
-    return this.http.delete("http://localhost:8080/storages/delete/" + id)
+    return this.http.delete("http://localhost:8080/storages/" + id)
   }
 
   getStorageProducts(id: number) {

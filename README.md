@@ -1,27 +1,19 @@
-# SmartWarehouse
+# SMART WAREHOUSE BACKEND
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.6.
+**Smart Warehouse** is a web application for keeping track of things.
+In this application, you can enter, for example, rooms, boxes, shelves
+and their capacity, after that you can also add/delete/update items there.
 
-## Development server
+### Smart Warehouse team members:
+Julia Djomina
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### "How do I access your website?"
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. PLease clone [backend repository](https://github.com/Juliadjomina/smart-warehouse-back-end) as well as this frontend repository.
+2. Our SQL database is resided in the Docker. Please build the Docker image as following:
+  - `docker compose up -d`
+3. When the database is up and running, go to `src\main\java\net\group\warehouse\SmartWarehouseApplication.java` in the backend repo and run the
+   `SmartWarehouseApplication` file.
+4. Congrats! Backend is now running on `localhost:8080`.
+5. Only when the backend is all set up and running, you can run frontend.
+   Please open the frontend repository in your terminal and run `ng serve`. Our website will open on `localhost:4200`.
